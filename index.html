@@ -17,18 +17,25 @@
 
 <body>
     <header>
+
         <div class="wrapper">
-            <nav class="main-nav">
-                <label for="menu-toggle" class="menu-toggle-container"></label><input type="checkbox" id="menu-toggle">
-                <ul>
+            <nav class="top-nav">
+                <div class="wrapper">
+                <input type="checkbox" id="menu-toggle" hidden>
+                <label for="menu-toggle" class="menu-button-container">
+                    <div class="menu-button"></div>
+                </label>
+                <ul class="menu">
                     <li><a href="#">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+            </div>
             </nav>
+            
             <div class="main-heading">
-                <h1><span>Aro</span></h1>
+                <h1><span>Aro</span>ra</h1>
                 <h2>Jewelers</h2>
             </div>
         </div><!-- /wrapper-->
@@ -43,6 +50,13 @@
                 </ul>
             </nav>
         </aside>
+
+        <picture>
+            <!--  Let the browser select the image -->
+            <source media="(max-width: 767px)" srcset="./assets/header-1.jpg">
+            <img class="background-images" src="./assets/header-2.jpg"
+                alt="A woman wearing a long necklace showing her back">
+        </picture>
 
     </header>
 </body>
