@@ -1,0 +1,94 @@
+/**         Styles Guide       **/
+
+
+/*  
+    Hero Heading Text:
+        Italiana, Regular (400), 162px (8.1rem)
+        Right, Line height: 140.4px (7.02);
+    
+    Hand Crafted, Latest Collection:
+        Italiana, Regular(400), 51px (2.55rem)
+
+    Hero Sub-heading ('Jewelers'):
+        Lato, Light (300), 45px (2.25rem)
+        Right, Line height: 46px (2.3)
+
+    Catalogue, Events, Collaborations:
+        Italina, Regular(400), 30px (1.5rem)
+        Center
+
+    Read More:
+        Italiana, Regular (400), 25px (1.25rem)
+        Center, Line height: 29px (1.45)
+
+    Foot Headings (Stay Updated, Contact)
+        Italiana, Regular (400), 25px (1.25rem)
+        Right
+
+    Footer Navigation Items:
+        Italiana, Regular (400), 20px (1rem)
+        Line height: 29px (1.45)
+    
+    Top Navigation Items:
+        Lato, Regular (400), 20px (1rem)
+        Line height: 29px (1.45)
+
+    Body Text
+
+*/
+
+:root {
+/** Fonts **/
+--italiana: 'Italiana', serif;
+--lato: 'Lato', sans-serif;
+
+
+--text-color: #FFF;
+--accent-color: #FABA63;
+--dark-one: #201E21;
+--dark-two: #14171f;
+}
+
+
+
+
+
+/**     Global Styles      **/
+
+
+html {
+    font-size: 125%;
+}
+
+body {
+
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: inherit;
+}
+
+.wrapper{
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+img {
+    min-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
