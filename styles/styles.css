@@ -1,6 +1,5 @@
 /**         Styles Guide       **/
 
-
 /*  
     Hero Heading Text:
         Italiana, Regular (400), 162px (8.1rem)
@@ -33,62 +32,54 @@
         Lato, Regular (400), 20px (1rem)
         Line height: 29px (1.45)
 
-    Body Text
+    Body Text:
+        Lato, Light (300), 20px (1rem)
+        Line height: 29px (1.45)
 
 */
 
 :root {
-/** Fonts **/
---italiana: 'Italiana', serif;
---lato: 'Lato', sans-serif;
+  /** Fonts **/
+  --italiana: "Italiana", serif;
+  --lato: "Lato", sans-serif;
 
-
---text-color: #FFF;
---accent-color: #FABA63;
---dark-one: #201E21;
---dark-two: #14171f;
+  --text-color: #fff;
+  --accent-color: #faba63;
+  --dark-one: #201e21;
+  --dark-two: #14171f;
 }
-
-
-
-
 
 /**     Global Styles      **/
 
-
 html {
-    font-size: 125%;
+  font-size: 125%;
 }
 
 body {
-
 }
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 a:visited {
-    color: inherit;
+  color: inherit;
 }
 
-.wrapper{
-    max-width: 1200px;
-    width: 90%;
-    margin: 0 auto;
+.wrapper {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 img {
-    min-width: 100%;
-    height: auto;
-    display: block;
+  min-width: 100%;
+  height: auto;
+  display: block;
 }
-
-
