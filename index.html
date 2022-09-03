@@ -38,7 +38,7 @@
 
             <aside>
                 <nav class="hero-side-nav">
-                    <ul>
+                    <ul class="menu">
                         <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
                         <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
                         <li><a href="#"><i class="fa-brands fa-snapchat"></i></a></li>
@@ -111,49 +111,75 @@
         </section> <!-- /Links Banner-->
 
         <section id="articles" class="articles-section">
-            <div class="wrapper">
-                <article>
-                    <div class="image-container">
-                        <picture>
-                            <!--  Let the browser select the image -->
-                            <source media="(max-width: 767px)" srcset="./assets/image-5.jpg">
-                            <img src="./assets/image-5@2x.png"
-                                alt="Close up of a woman wearing a couple of long necklaces">
-                        </picture>
-                    </div>
-                    <div class="content">
-                        <h3>Sustainable Materials</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium sequi explicabo porro
-                            optio
-                            minima inventore et deserunt voluptatum laboriosam! Impedit, aut possimus facilis earum quae
-                            dolorum
-                            laudantium. Tempore corrupti soluta inventore excepturi minus cupiditate asperiores!</p>
-                        <a href="" class="read-more-links">Read More</a>
-                    </div>
-                </article>
-                <article>
-                    <div class="image-container">
-                        <picture>
-                            <!--  Let the browser select the image -->
-                            <source media="(max-width: 767px)" srcset="./assets/image-6@2x.png">
-                            <img src="./assets/image-6@2x.png"
-                                alt="Close up of a woman wearing a couple of long necklaces">
-                        </picture>
-                    </div>
-                    <div class="content">
-                        <h3>Mix & Match</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium sequi explicabo porro
-                            optio
-                            minima inventore et deserunt voluptatum laboriosam! Impedit, aut possimus facilis earum quae
-                            dolorum
-                            laudantium. Tempore corrupti soluta inventore excepturi minus cupiditate asperiores!</p>
-                        <a href="" class="read-more-links">Read More</a>
-                    </div>
-                </article>
+            <article>
+                <div class="image-container">
+                    <picture>
+                        <!--  Let the browser select the image -->
+                        <source media="(max-width: 767px)" srcset="./assets/image-5.jpg">
+                        <img src="./assets/image-5@2x.png" alt="Close up of a woman wearing a couple of long necklaces">
+                    </picture>
+                </div>
+                <div class="content wrapper">
+                    <h3>Sustainable Materials</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium sequi explicabo porro
+                        optio
+                        minima inventore et deserunt voluptatum laboriosam! Impedit, aut possimus facilis earum quae
+                        dolorum
+                        laudantium. Tempore corrupti soluta inventore excepturi minus cupiditate asperiores!</p>
+                    <a href="" class="read-more-links">Read More</a>
+                </div>
+            </article>
+            <article>
+                <div class="image-container">
+                    <picture>
+                        <!--  Let the browser select the image -->
+                        <source media="(max-width: 767px)" srcset="./assets/image-6@2x.png">
+                        <img src="./assets/image-6@2x.png" alt="Close up of a woman wearing a couple of long necklaces">
+                    </picture>
+                </div>
+                <div class="content wrapper">
+                    <h3>Mix & Match</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium sequi explicabo porro
+                        optio
+                        minima inventore et deserunt voluptatum laboriosam! Impedit, aut possimus facilis earum quae
+                        dolorum
+                        laudantium. Tempore corrupti soluta inventore excepturi minus cupiditate asperiores!</p>
+                    <a href="" class="read-more-links">Read More</a>
+                </div>
+            </article>
 
-            </div>
         </section> <!-- /Articles Section-->
     </main>
+    <footer id="contact">
+        <section class="wrapper">
+            <nav class="footer-nav">
+                <ul class="menu">
+                    <li><a href="#"></a>Home</li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#latest-collection">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <form method="get" class="stay-updated-form">
+                <legend>
+                    <hgroup>
+                        <h5>Stay Updated</h5>
+                        <p>Suscribe to our news letter to stay updated</p>
+                    </hgroup>
+                </legend>
+                <input type="email">
+                <button type="submit">Suscribe</button>
+            </form>
+            <address id="contact">
+                <h5>Contact</h5>
+                <a href="mailto:info@email.com">info@email.com</a>
+                <a href="tel:+11234567890">123 - 456 -7890</a>
+                123 some road, Toronto ON<br>
+                A5A 5A5, Canada
+            </address>
+        </section>
+        <p>Copyright &#169; 2019 Hacker You</p>
+    </footer>
 </body>
 
 </html>

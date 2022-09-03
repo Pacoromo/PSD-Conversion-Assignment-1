@@ -374,3 +374,9 @@ header {
     align-items: center;
     padding: 2.5rem 0;
 }
+
+/*******          Footer Section          **********/
+
+footer {
+    background-color: #faba63;
+}
