@@ -58,9 +58,10 @@ html {
 body {
     color: var(--text-color);
     background-color: var(--dark-one);
-    font-family: var(--italiana);
+    font-family: var(--lato);
     font-weight: 300;
     font-size: 1rem;
+    line-height: 1.45;
 }
 
 ul {
@@ -80,25 +81,50 @@ a:visited {
 
 .wrapper {
     max-width: 1200px;
-    width: 95%;
+    width: 90%;
     margin: 0 auto;
 }
 
 img {
-    min-width: 100%;
+    max-width: 100%;
     height: auto;
     display: block;
 }
 
 h1 {
     font-family: var(--italiana);
+    font-weight: 400;
+    font-size: clamp(2.8rem, 15vw, 8.1rem);
+    line-height: .86;
     text-transform: uppercase;
+    margin: 0;
 }
 
 h2 {
     color: var(--accent-color);
     font-family: var(--lato);
     font-weight: 300;
+    font-size: clamp(.8rem, 4vw, 2.25rem);
+    line-height: 1.02;
+    text-transform: capitalize;
+    margin: 0;
+}
+
+h3 {
+    font-family: var(--italiana);
+    font-weight: 400;
+    font-size: clamp(1.5rem, 5vw, 2.55rem);
+    line-height: 1;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+h4{
+    font-family: var(--italiana);
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin: 0;
 }
 
 /*******************************************/
@@ -113,7 +139,7 @@ header {
 
 /* navigation bar and button */
 
-.top-nav .wrapper {
+.top-nav {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
@@ -131,6 +157,7 @@ header {
     cursor: pointer;
 }
 
+/* Menu button lines */
 .menu-button,
 .menu-button::before,
 .menu-button::after {
@@ -142,8 +169,6 @@ header {
     transition: all 400ms ease-in-out;
     border-radius: 2px;
 }
-
-/* Menu button lines */
 
 .menu-button::before {
     content: "";
@@ -161,7 +186,8 @@ header {
 }
 
 #menu-toggle:checked+.menu-button-container .menu-button {
-    background: rgba(255, 255, 255, 0);
+    background: transparent;
+    /* mid line dissapears*/
 }
 
 #menu-toggle:checked+.menu-button-container .menu-button::after {
@@ -183,6 +209,7 @@ header {
     height: 0;
     overflow: hidden;
     transition: height 400ms ease-out;
+    /* same duration as button rotation*/
 }
 
 #menu-toggle:checked~.menu li {
@@ -201,6 +228,30 @@ header {
     text-align: center;
 }
 
+.top-nav a:hover,
+.top-nav a:focus {
+    color: var(--dark-one);
+    background-color: var(--accent-color)
+}
+
+/*  Hero Heading  */
+
+.main-heading {
+    margin-top: 18vh;
+    width: 45%;
+    text-align: right;
+}
+
+.main-heading span {
+    display: block;
+}
+
+
+.main-heading span::before,
+.main-heading span::after {
+    content: "-";
+}
+
 /* Hero Side Nav */
 
 .hero-side-nav {
@@ -215,4 +266,111 @@ header {
     object-fit: cover;
     width: 100%;
     height: 100%;
+}
+
+/*******          About Section          **********/
+
+.about-section {
+    background-color: var(--dark-two);
+    padding: 2.5rem 0;
+}
+
+.about-section .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2em;
+}
+
+.read-more-links {
+    color: var(--text-color);
+    background-color: transparent;
+    font-family: var(--italiana);
+    font-size: 1.25rem;
+    line-height: 1.45;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid var(--accent-color);
+    padding: .3em .6em;
+    margin-top: 1em;
+}
+
+.read-more-links:hover {
+    border-color: var(--dark-one);
+    background-color: #7a4800
+}
+
+.read-more-links:active {
+    border-color: var(--accent-color);
+    background-color: var(--dark-one)
+
+}
+
+/*******          Latest Section          **********/
+
+.latest-collection-section {
+    text-align: center;
+    padding: 2.5rem 0;
+}
+
+.gallery {
+    display: flex;
+    padding-top: 3rem;
+    margin: -1%; /* to align with wrapper*/
+    overflow: hidden;
+}
+
+.gallery li {
+    margin: 1%;
+    flex: 1 0 48%;
+}
+
+/*******          Latest Section          **********/
+
+.links-banner-section {
+    background-color: var(--dark-two);
+    padding: 2.5rem 0;
+}
+
+.links-banner-section .links-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.links-banner-section li {
+    text-align: center;
+}
+
+.links-banner-section li:not(:last-of-type) {
+    margin-bottom: 2rem;
+}
+
+.links-banner-section i {
+    color: var(--accent-color);
+    font-size: clamp(2.5rem, 5vw, 3.2rem);
+    margin-bottom: .2em;
+}
+
+.links-banner-section i:hover {
+    color: #7a4800;
+}
+
+/*******          Sustainable Materials Section          **********/
+/* 
+.sustainable-materials-section {
+    padding: 2.5rem 0;
+} */
+/* 
+.articles-section .article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+.articles-section .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 0;
 }
