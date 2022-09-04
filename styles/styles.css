@@ -38,6 +38,10 @@
 
 */
 
+/**********************************/
+/**         Variables             */
+/**********************************/
+
 :root {
     /*  Fonts  */
     --italiana: "Italiana", serif;
@@ -47,6 +51,8 @@
     --accent-color: #faba63;
     --dark-one: #201e21;
     --dark-two: #14171f;
+    /*  layout  */
+    --section-padding: 12%;
 }
 
 /**     Global Styles      **/
@@ -122,7 +128,8 @@ h3 {
 h4 {
     font-family: var(--italiana);
     font-weight: 400;
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
+    font-size: clamp(1.3rem, 3.5vw, 1.5rem);
     text-transform: uppercase;
     margin: 0;
 }
@@ -215,7 +222,8 @@ h5 {
 
 .menu-toggle-button:checked~.menu li {
     border: 1px solid #333;
-    max-height: 4em; /*https://stackoverflow.com/questions/3508605/how-can-i-transition-height-0-to-height-auto-using-css*/
+    max-height: 10em;
+    /*https://stackoverflow.com/questions/3508605/how-can-i-transition-height-0-to-height-auto-using-css*/
     transition: max-height 400ms ease-out;
 }
 
@@ -233,6 +241,7 @@ h5 {
     color: var(--accent-color);
     font-family: var(--lato);
     font-weight: 400;
+    font-size: clamp(1.5rem, 5vw, 2rem);
     text-align: center;
 }
 
@@ -265,7 +274,9 @@ h5 {
     display: none;
 }
 
-.background-images {
+/*  Hero Image  */
+
+.hero-image {
     position: absolute;
     z-index: -1;
     top: 0;
@@ -279,14 +290,14 @@ h5 {
 
 .about-section {
     background-color: var(--dark-two);
-    padding: 2.5rem 0;
+    padding: var(--section-padding) 0;
 }
 
 .about-section .content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 2em;
+    margin-top: 2em;
 }
 
 .read-more-links {
@@ -312,11 +323,11 @@ h5 {
     background-color: var(--dark-one);
 }
 
-/*******          Latest Section          **********/
+/*******          Latest Collection Section          **********/
 
 .latest-collection-section {
     text-align: center;
-    padding: 2.5rem 0;
+    padding: var(--section-padding) 0;
 }
 
 .gallery {
@@ -332,11 +343,11 @@ h5 {
     flex: 1 0 48%;
 }
 
-/*******          Latest Section          **********/
+/*******       Links Banner  Section      **********/
 
 .links-banner-section {
     background-color: var(--dark-two);
-    padding: 2.5rem 0;
+    padding: var(--section-padding) 0;
 }
 
 .links-banner-section .links-menu {
@@ -363,30 +374,20 @@ h5 {
     color: #7a4800;
 }
 
-/*******          Sustainable Materials Section          **********/
-/* 
-.sustainable-materials-section {
-    padding: 2.5rem 0;
-} */
-/* 
-.articles-section .article {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
+/*******          Articles Section          **********/
 
 .articles-section .content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2.5rem 0;
+    padding: var(--section-padding) 0;
 }
 
 /*******          Footer Section          **********/
 
 .footer {
     background-color: var(--dark-two);
-    padding-top: 2.5rem;
+    padding-top: var(--section-padding);
     text-align: center;
 }
 
@@ -457,8 +458,13 @@ h5 {
 @media screen and (min-width: 768px) {
     /**     Global Styles      **/
 
+    :root {
+        /* Half the wrapper margin for balance*/
+        --section-padding: 7.5%;
+    }
+
     .wrapper {
-        width: 80%;
+        width: 85%;
     }
 
     /*******           Header         **********/
@@ -481,7 +487,7 @@ h5 {
     }
 
     .menu-toggle-button~.menu.direction-switchable li {
-        /* more specific than initial rule*/
+        /* more specific than initial rule to override */
         /* Reset */
         display: inline-block;
         max-height: 4em;
@@ -492,12 +498,94 @@ h5 {
 
     .menu-toggle-button~.menu.direction-switchable li:first-of-type {
         /* line up left anchor and wrapper (padding .5em)*/
-        margin-left: -.5em;
+        margin-left: -0.5em;
     }
 
     .top-nav a {
         /* Reset */
+        font-size: 1rem;
         width: auto;
         padding: 0.5em;
+    }
+
+    /*******       Links Banner  Section      **********/
+
+    .links-banner-section .links-menu {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .links-banner-section li {
+        width: calc(100% / 3);
+    }
+
+    .links-banner-section li:not(:last-of-type) {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    /*******          About Section          **********/
+
+    .about-section .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 3%;
+    }
+
+    .about-section img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .about-section .content {
+        flex: 2;
+        align-items: flex-start;
+        margin-top: 0;
+    }
+
+    /*******          Latest Collection Section          **********/
+    .gallery li {
+        flex: 1;
+    }
+
+    /*******          Articles Section          **********/
+
+    .article {
+        display: flex;
+        /*lock the width*/
+        max-width: 1420px;
+        margin: 0 auto;
+    }
+
+    .article:nth-of-type(odd) {
+        /*if more articles are added this still works*/
+        flex-direction: row-reverse;
+    }
+
+    .article .image-container {
+        width: 50%;
+    }
+
+    .article img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .article .content {
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 50%;
+        /* same padding as the body wrapper*/
+        padding: var(--section-padding);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    /**     Global Styles      **/
+
+    :root {
+        /* Lock section spacing for big screens*/
+        --section-padding: 90px;
     }
 }
