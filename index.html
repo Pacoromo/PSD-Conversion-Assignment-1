@@ -16,14 +16,14 @@
 </head>
 
 <body>
-    <header>
+    <header class="main-header">
         <div class="wrapper">
             <nav class="top-nav">
-                <input type="checkbox" id="menu-toggle" hidden>
+                <input type="checkbox" id="menu-toggle" class="menu-toggle-button" hidden>
                 <label for="menu-toggle" class="menu-button-container">
                     <div class="menu-button"></div>
                 </label>
-                <ul class="menu">
+                <ul class="menu direction-switchable">
                     <li><a href="#">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#blog">Blog</a></li>
@@ -64,7 +64,7 @@
                     <picture>
                         <!--  Art-directioon. Let the browser select the image -->
                         <source media="(max-width: 767px)" srcset="./assets/image-1.jpg">
-                        <img src="./assets/image-1@2x.png" alt="Hands of a woman working in the craft of jewelry ">
+                        <img src="./assets/image-1@2x.png" alt="Hands of a woman working on the craft of jewelry ">
                     </picture>
                 </div>
                 <article class="content">
@@ -129,6 +129,7 @@
                     <a href="" class="read-more-links">Read More</a>
                 </div>
             </article>
+
             <article>
                 <div class="image-container">
                     <picture>
@@ -150,30 +151,35 @@
 
         </section> <!-- /Articles Section-->
     </main>
-    <footer id="contact">
+    <footer id="contact" class="footer">
         <section class="wrapper">
             <nav class="footer-nav">
                 <ul class="menu">
-                    <li><a href="#"></a>Home</li>
+                    <li><a href="#">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#latest-collection">Gallery</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <form method="get" class="stay-updated-form">
-                <legend>
-                    <hgroup>
-                        <h5>Stay Updated</h5>
-                        <p>Suscribe to our news letter to stay updated</p>
-                    </hgroup>
-                </legend>
-                <input type="email">
-                <button type="submit">Suscribe</button>
-            </form>
-            <address id="contact">
+
+            <div class="form-container">
+                <hgroup>
+                    <h5>Stay Updated</h5>
+                    <p>Suscribe to our news letter to stay updated.</p>
+                </hgroup>
+                <form method="get">
+                    <label for="email" class="sr-only">email address</label>
+                    <input type="email" id="email" placeholder="email address">
+                    <button type="submit">Suscribe</button>
+                </form>
+            </div>
+
+            <address id="contact" class="contact-info">
                 <h5>Contact</h5>
-                <a href="mailto:info@email.com">info@email.com</a>
-                <a href="tel:+11234567890">123 - 456 -7890</a>
+                <span>
+                    <a href="mailto:info@email.com">info@email.com</a>
+                    <a href="tel:+11234567890">123 - 456 -7890</a>
+                </span>
                 123 some road, Toronto ON<br>
                 A5A 5A5, Canada
             </address>

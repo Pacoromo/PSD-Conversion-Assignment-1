@@ -95,7 +95,7 @@ h1 {
     font-family: var(--italiana);
     font-weight: 400;
     font-size: clamp(2.8rem, 15vw, 8.1rem);
-    line-height: .86;
+    line-height: 0.86;
     text-transform: uppercase;
     margin: 0;
 }
@@ -104,7 +104,7 @@ h2 {
     color: var(--accent-color);
     font-family: var(--lato);
     font-weight: 300;
-    font-size: clamp(.8rem, 4vw, 2.25rem);
+    font-size: clamp(0.8rem, 4vw, 2.25rem);
     line-height: 1.02;
     text-transform: capitalize;
     margin: 0;
@@ -119,10 +119,18 @@ h3 {
     margin: 0;
 }
 
-h4{
+h4 {
     font-family: var(--italiana);
     font-weight: 400;
     font-size: 1.5rem;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+h5 {
+    font-family: var(--italiana);
+    font-weight: 400;
+    font-size: 1.25rem;
     text-transform: uppercase;
     margin: 0;
 }
@@ -133,7 +141,7 @@ h4{
 
 /*******           Header         **********/
 
-header {
+.main-header {
     height: 100vh;
 }
 
@@ -151,7 +159,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* To center the menu button inside its container*/
+    /*Center the menu button inside its container*/
     width: 44px;
     height: 44px;
     cursor: pointer;
@@ -197,6 +205,20 @@ header {
 
 /* Top nav menu list */
 
+.menu-toggle-button~.menu li {
+    background-color: var(--dark-one);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 400ms ease-out;
+    /* same duration as button rotation*/
+}
+
+.menu-toggle-button:checked~.menu li {
+    border: 1px solid #333;
+    max-height: 4em; /*https://stackoverflow.com/questions/3508605/how-can-i-transition-height-0-to-height-auto-using-css*/
+    transition: max-height 400ms ease-out;
+}
+
 .top-nav .menu {
     position: absolute;
     top: 60px;
@@ -204,24 +226,10 @@ header {
     width: 100%;
 }
 
-#menu-toggle~.menu li {
-    background-color: var(--dark-one);
-    height: 0;
-    overflow: hidden;
-    transition: height 400ms ease-out;
-    /* same duration as button rotation*/
-}
-
-#menu-toggle:checked~.menu li {
-    border: 1px solid #333;
-    height: 3em;
-    transition: height 400ms ease-out;
-}
-
 .top-nav a {
     display: inline-block;
     width: 100%;
-    padding: 1em;
+    padding: 1em 0;
     color: var(--accent-color);
     font-family: var(--lato);
     font-weight: 400;
@@ -231,21 +239,20 @@ header {
 .top-nav a:hover,
 .top-nav a:focus {
     color: var(--dark-one);
-    background-color: var(--accent-color)
+    background-color: var(--accent-color);
 }
 
 /*  Hero Heading  */
 
 .main-heading {
     margin-top: 18vh;
-    width: 45%;
+    display: inline-block;
     text-align: right;
 }
 
 .main-heading span {
     display: block;
 }
-
 
 .main-heading span::before,
 .main-heading span::after {
@@ -291,19 +298,18 @@ header {
     text-transform: uppercase;
     letter-spacing: 1px;
     border: 2px solid var(--accent-color);
-    padding: .3em .6em;
+    padding: 0.3em 0.6em;
     margin-top: 1em;
 }
 
 .read-more-links:hover {
     border-color: var(--dark-one);
-    background-color: #7a4800
+    background-color: #7a4800;
 }
 
 .read-more-links:active {
     border-color: var(--accent-color);
-    background-color: var(--dark-one)
-
+    background-color: var(--dark-one);
 }
 
 /*******          Latest Section          **********/
@@ -316,7 +322,8 @@ header {
 .gallery {
     display: flex;
     padding-top: 3rem;
-    margin: -1%; /* to align with wrapper*/
+    margin: -1%;
+    /* to align with wrapper*/
     overflow: hidden;
 }
 
@@ -349,7 +356,7 @@ header {
 .links-banner-section i {
     color: var(--accent-color);
     font-size: clamp(2.5rem, 5vw, 3.2rem);
-    margin-bottom: .2em;
+    margin-bottom: 0.2em;
 }
 
 .links-banner-section i:hover {
@@ -377,6 +384,120 @@ header {
 
 /*******          Footer Section          **********/
 
-footer {
-    background-color: #faba63;
+.footer {
+    background-color: var(--dark-two);
+    padding-top: 2.5rem;
+    text-align: center;
+}
+
+.footer-nav .menu {
+    display: flex;
+    justify-content: space-between;
+    line-height: 1.45;
+}
+
+.form-container,
+.contact-info {
+    margin: 2rem 0;
+}
+
+.footer p,
+.contact-info {
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.form-container p {
+    margin: 0.8em;
+}
+
+.form-container input,
+.form-container button {
+    text-align: center;
+    border: none;
+    width: 100%;
+    height: 2.5rem;
+}
+
+.form-container input {
+    font-family: inherit;
+    margin-bottom: 0.6em;
+}
+
+.form-container button {
+    color: #fff;
+    background-color: #000;
+    font-family: var(--italiana);
+    font-size: 1.25rem;
+    text-transform: uppercase;
+}
+
+.contact-info {
+    font-style: normal;
+}
+
+.contact-info span {
+    display: block;
+}
+
+.contact-info a:first-of-type::after {
+    content: " |";
+}
+
+.footer>p {
+    background-color: #000;
+    margin: 0;
+    padding: 1em;
+}
+
+/****************************************************/
+/*****************Media Queries**********************/
+/****************************************************/
+
+@media screen and (min-width: 768px) {
+    /**     Global Styles      **/
+
+    .wrapper {
+        width: 80%;
+    }
+
+    /*******           Header         **********/
+
+    /* navigation bar and button */
+
+    .menu-button-container {
+        display: none;
+    }
+
+    .top-nav {
+        flex-direction: row;
+        height: 100px;
+        /*20% higher than mobile*/
+    }
+
+    .top-nav .menu {
+        /* Return to position */
+        position: static;
+    }
+
+    .menu-toggle-button~.menu.direction-switchable li {
+        /* more specific than initial rule*/
+        /* Reset */
+        display: inline-block;
+        max-height: 4em;
+        background-color: initial;
+        border: none;
+        margin: 2%;
+    }
+
+    .menu-toggle-button~.menu.direction-switchable li:first-of-type {
+        /* line up left anchor and wrapper (padding .5em)*/
+        margin-left: -.5em;
+    }
+
+    .top-nav a {
+        /* Reset */
+        width: auto;
+        padding: 0.5em;
+    }
 }
