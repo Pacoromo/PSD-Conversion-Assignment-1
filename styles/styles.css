@@ -57,8 +57,6 @@
     --section-padding-top-and-bottom: calc(100% - var(--body-wrapper));
     /* Articles top/bottom padding half of section padding */
     --article-padding-sides: calc(var(--section-padding-top-and-bottom) / 2);
-
-    --display-social-media: none;
 }
 
 /**     Global Styles      **/
@@ -163,6 +161,7 @@ img {
 }
 
 .top-nav,
+.social-nav,
 .menu-button-container,
 .about-section .content,
 .gallery,
@@ -188,6 +187,13 @@ img {
     flex-direction: row-reverse;
     align-items: center;
     height: 60px;
+}
+
+.top-nav .menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
 }
 
 .menu-button-container {
@@ -249,23 +255,19 @@ img {
 }
 
 .menu-toggle-button:checked~.menu li {
-    border: 1px solid #333;
     max-height: 10em;
     /*https://stackoverflow.com/questions/3508605/how-can-i-transition-height-0-to-height-auto-using-css*/
     transition: max-height 400ms ease-out;
 }
 
-.top-nav .menu {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
+.menu-toggle-button:checked~.menu>li {
+    border: 1px solid #333;
 }
 
 .top-nav a {
     display: inline-block;
     width: 100%;
-    padding: 1em 0;
+    padding: .7em;
     color: var(--accent-color);
     font-family: var(--lato);
     font-weight: 400;
@@ -275,17 +277,40 @@ img {
     border: 1px solid transparent;
 }
 
+/* Top nav behaviour */
+
 .top-nav a:hover,
 .top-nav a:focus {
     color: var(--accent-color);
-    background-color: transparent;
-    border: 1px solid var(--accent-color);
+    /* background-color: transparent; */
 }
 
 .top-nav a:active {
     color: var(--dark-brown);
     background-color: var(--accent-color);
 }
+
+/*  social media links */
+
+.direction-switchable>li:not(:last-child) a:hover,
+.direction-switchable>li:not(:last-child) a:focus {
+    /* Not borders on social links when hovered*/
+    border: 1px solid var(--accent-color);
+}
+
+.social-nav {
+    justify-content: space-evenly;
+}
+
+.social-nav a:hover,
+.social-nav a:focus {
+    color: #fff;
+}
+
+.top-nav .social-nav a:active {
+    color: var(--dark-blue);
+}
+
 
 /*  Hero Heading  */
 
@@ -345,7 +370,7 @@ img {
 
 .read-more-links:active {
     border-color: var(--accent-color);
-    background-color:  #482a00;
+    background-color: #482a00;
 }
 
 /*******          Latest Collection Section          **********/
@@ -401,11 +426,7 @@ img {
     padding: var(--section-padding-top-and-bottom) var(--article-padding-sides);
 }
 
-/***************** floating Side Nav ****************/
 
-.floating-side-nav {
-    display: var(--display-social-media);
-}
 
 /*******          Footer Section          **********/
 
@@ -479,7 +500,8 @@ img {
     border-bottom: 1px solid;
 }
 
-.footer button:hover {
+.footer button:hover,
+.footer button:focus {
     background-color: var(--dark-brown);
     border: 1px solid;
     cursor: pointer;
@@ -499,10 +521,9 @@ img {
 
     :root {
         --body-wrapper: 85%;
-        /* Half the wrapper margin for balance*/
+        /* same as wrapper margin for balance*/
         --section-padding-top-and-bottom: 7.5%;
         --article-padding-sides: 7.5%;
-        --display-social-media: block;
     }
 
     /*******           Header         **********/
@@ -514,7 +535,7 @@ img {
     }
 
     .top-nav {
-        /*20% taller than mobile*/
+        /*40px taller than mobile*/
         height: 100px;
     }
 
@@ -535,7 +556,7 @@ img {
         margin: 2%;
     }
 
-    .menu-toggle-button~.menu.direction-switchable li:first-of-type {
+    .menu-toggle-button~.menu.direction-switchable>li:first-child {
         /* line up left anchor and wrapper (padding .5em)*/
         margin-left: -0.5em;
     }
@@ -545,6 +566,30 @@ img {
         font-size: 1rem;
         width: auto;
         padding: 0.5em;
+    }
+
+    /*      floating Side Nav    */
+
+    .social-nav {
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        bottom: 4em;
+        right: 0;
+        /*width is same as body margin to center icons inside the right side margin*/
+        width: var(--section-padding-top-and-bottom);
+    }
+
+    .social-nav a {
+        padding: .3em;
+        font-size: clamp(1.1rem, 2.15vw, 1.5rem);
+        color: #fff;
+    }
+
+    .social-nav a:hover,
+    .social-nav a:focus {
+        color: var(--accent-color);
+        border-color: transparent;
     }
 
     /*******       Links Banner  Section      **********/
@@ -560,18 +605,6 @@ img {
 
     .links-banner-section li:not(:last-of-type) {
         margin-bottom: 0;
-    }
-    /***************** floating Side Nav ****************/
-
-    .floating-side-nav {
-        display: var(--display-social-media);
-        position: fixed;
-        bottom: 4em;
-        right: 1em;
-    }
-
-    .floating-side-nav li {
-        margin-top: .5em;
     }
 
     /*******          Footer Section          **********/
@@ -637,6 +670,7 @@ img {
     }
 
     /*******          Latest Collection Section          **********/
+
     .gallery li {
         flex: 1;
     }
@@ -700,6 +734,7 @@ img {
     }
 
     .submit-btn {
+        /*reset*/
         width: auto;
     }
 
@@ -715,7 +750,7 @@ img {
     /**     Global Styles      **/
 
     :root {
-        /* Lock section spacing for big screens*/
+        /* Lock section spacing for ultra wide screens*/
         --section-padding-top-and-bottom: 90px;
     }
 }
