@@ -2,7 +2,7 @@
 
 ## Objective:
 
-As per **[Juno College](https://junocollege.com)** guidelines; try to replicate a desing as accurately and consistently as posible. 
+As per **[Juno College](https://junocollege.com)** guidelines; try to replicate a desing accurately and consistently as possible.
 - Using fluid design
 - Media Queries
 - Dynamic measurements
