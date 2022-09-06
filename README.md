@@ -11,7 +11,7 @@ Try to replicate a desing accurately and consistently as possible making use of 
 - Wrappers 
 - CSS Setup snippet
 - Images with alt text
-- Consistent naming convention thoroughout
+- Consistent naming convention throughout
 
 In this first assignment, I tried to push myself to use as less backgorund images as posible to include image descriptions for accessibility and making use of relatively new CSS properties (like object-fit)
 
