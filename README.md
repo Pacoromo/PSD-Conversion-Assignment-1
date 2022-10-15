@@ -1,4 +1,4 @@
-# PSD-Conversion-Assignment-1
+# PSD-Conversion
 
 ## Objective:
 
